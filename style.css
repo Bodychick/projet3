@@ -71,6 +71,7 @@ nav {
   padding: 30px;
 }
 .presentation a {
+  box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
@@ -104,14 +105,20 @@ ol li {
   border-radius: 19px;
   background-color: #f5f5f5;
   color: black;
+  position: relative;
+  align-items: center;
 }
 ol li::before {
   content: counter(compteListe) " ";
   counter-increment: compteListe 1;
+  position: absolute;
+  top: 1rem;
+  left: -0.5rem;
+  color: white;
   background: #9356DC;
-  border-radius: 100px;
-  font-size: 1.3rem;
-  padding: 3px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  padding: 2px 8px;
 }
 ol li:hover {
   background-color: #e3daee;
@@ -222,4 +229,60 @@ footer ul {
   list-style: none;
   -webkit-margin-start: 0;
           margin-inline-start: 0;
+}
+
+@media (min-width: 768px) {
+  .fonctionnement ol {
+    display: flex;
+    -moz-column-gap: 4%;
+         column-gap: 4%;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .fonctionnement ol li {
+    width: 25%;
+  }
+  .restaurant {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .restaurant h2 {
+    margin-left: 40px;
+    width: 100%;
+  }
+  .restaurant figure {
+    width: 45%;
+  }
+  .restaurant figure img {
+    height: 170px;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    max-width: 1440px;
+  }
+  .fonctionnement ol {
+    display: flex;
+    -moz-column-gap: 4%;
+         column-gap: 4%;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .fonctionnement ol li {
+    width: 25%;
+  }
+  .restaurant {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .restaurant h2 {
+    margin-left: 40px;
+    width: 100%;
+  }
+  .restaurant figure {
+    width: 45%;
+  }
+  .restaurant figure img {
+    height: 200px;
+  }
 }/*# sourceMappingURL=style.css.map */

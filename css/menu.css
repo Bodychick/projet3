@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(37, 37, 37);
+}
+
+h1, h2 {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.4em;
+}
+
+h1 {
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+}
+nav h1 {
+  text-align: center;
+}
+nav i {
+  position: absolute;
+  top: 18px;
+  left: 10px;
+}
+
+.en-tete-image {
+  position: relative;
+  width: 100%;
+}
+.en-tete-image figure {
+  padding: 0;
+  margin: 0;
+}
+.en-tete-image figure img {
+  z-index: 9999;
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main {
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  margin: -50px auto auto auto;
+  border-radius: 20px 20px 0 0;
+  background-color: rgb(238, 238, 238);
+}
+main .titre {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+main .titre .remplir {
+  animation: normal 10s ease;
+}
+main .titre .remplir:hover {
+  color: #9356DC;
+}
+main section {
+  margin: 0 auto;
+  width: 90%;
+  /* TEST ANIMATION */
+}
+main section hr {
+  width: 10px;
+  color: #99E2D0;
+}
+main section .plat-desc { /* ARTICLE */
+  padding-left: 10px;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  animation: slide-in-bottom 3s ease-in-out;
+  /* ----------------------------------------------
+  /**
+   * ----------------------------------------
+   * animation slide-in-bottom
+   * ----------------------------------------
+   */
+}
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+main section .plat-desc .titre-plat {
+  color: black;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+main section .plat-desc .price {
+  width: 10%;
+}
+main section .plat-desc .add-cart {
+  position: relative;
+  display: none;
+  border-radius: 0 10px 10px 0;
+  width: 10%;
+  background-color: #99E2D0;
+}
+main section .plat-desc .add-cart i {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  color: #99E2D0;
+  background-color: white;
+  border: 1px solid #99E2D0;
+  border-radius: 50%;
+  font-size: 35px;
+}
+main section .list-plate:hover .add-cart {
+  display: block;
+}
+main section .list-plate:hover .price {
+  margin-right: 15px;
+}
+main section .list-plate {
+  align-self: flex-end;
+  opacity: 1;
+  overflow: hidden;
+}
+
+footer {
+  background-color: rgb(39, 32, 32);
+  color: white;
+  margin: auto;
+}
+footer p, footer ul {
+  width: 80%;
+  margin: auto;
+  padding-bottom: 15px;
+}
+footer p {
+  font-family: "Shrikhand", sans-serif;
+  padding-top: 15px;
+  line-height: 1.15em;
+}
+footer ul {
+  list-style: none;
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+}
+
+@media (min-width: 768px) {
+  .en-tete-image figure img {
+    height: 300px;
+  }
+}
+@media (min-width: 1024px) {
+  .en-tete-image figure img {
+    height: 400px;
+  }
+}/*# sourceMappingURL=menu.css.map */
