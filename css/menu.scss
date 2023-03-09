@@ -98,7 +98,7 @@ main {
             width:10px;
             color: $third_color;
         }     
-        .plat-desc{ /* ARTICLE */
+        .list-plate{ /* ARTICLE */
             padding-left: 10px;
             background-color: white;
             border-radius: 15px;
@@ -108,35 +108,35 @@ main {
             -webkit-animation: slide-in-bottom 3s ease-in-out ;
             animation: slide-in-bottom 3s ease-in-out ;
             /* ----------------------------------------------
-/**
- * ----------------------------------------
- * animation slide-in-bottom
- * ----------------------------------------
- */
-@-webkit-keyframes slide-in-bottom {
-    0% {
-      -webkit-transform: translateY(50px);
-              transform: translateY(50px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  @keyframes slide-in-bottom {
-    0% {
-      -webkit-transform: translateY(200px);
-              transform: translateY(200px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      opacity: 1;
-    }
-  }
+            /**
+            * ----------------------------------------
+            * animation slide-in-bottom
+            * ----------------------------------------
+            */
+            @-webkit-keyframes slide-in-bottom {
+                0% {
+                -webkit-transform: translateY(50px);
+                        transform: translateY(50px);
+                opacity: 0;
+                }
+                100% {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+                opacity: 1;
+                }
+            }
+            @keyframes slide-in-bottom {
+                0% {
+                -webkit-transform: translateY(200px);
+                        transform: translateY(200px);
+                opacity: 0;
+                }
+                100% {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+                opacity: 1;
+                }
+            }
   
             
             .titre-plat{

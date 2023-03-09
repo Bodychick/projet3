@@ -76,7 +76,7 @@ main section hr {
   width: 10px;
   color: #99E2D0;
 }
-main section .plat-desc { /* ARTICLE */
+main section .list-plate { /* ARTICLE */
   padding-left: 10px;
   background-color: white;
   border-radius: 15px;
@@ -87,10 +87,10 @@ main section .plat-desc { /* ARTICLE */
   animation: slide-in-bottom 3s ease-in-out;
   /* ----------------------------------------------
   /**
-   * ----------------------------------------
-   * animation slide-in-bottom
-   * ----------------------------------------
-   */
+  * ----------------------------------------
+  * animation slide-in-bottom
+  * ----------------------------------------
+  */
 }
 @keyframes slide-in-bottom {
   0% {
@@ -102,22 +102,22 @@ main section .plat-desc { /* ARTICLE */
     opacity: 1;
   }
 }
-main section .plat-desc .titre-plat {
+main section .list-plate .titre-plat {
   color: black;
   font-size: 1.1em;
   font-weight: 600;
 }
-main section .plat-desc .price {
+main section .list-plate .price {
   width: 10%;
 }
-main section .plat-desc .add-cart {
+main section .list-plate .add-cart {
   position: relative;
   display: none;
   border-radius: 0 10px 10px 0;
   width: 10%;
   background-color: #99E2D0;
 }
-main section .plat-desc .add-cart i {
+main section .list-plate .add-cart i {
   position: absolute;
   top: 30%;
   left: 30%;
