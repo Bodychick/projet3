@@ -4,6 +4,9 @@
 
 body {
   color: rgb(37, 37, 37);
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  margin: 0 auto;
 }
 
 h1, h2 {
@@ -16,6 +19,11 @@ h1 {
   margin: 0 auto;
 }
 
+h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
 nav {
   position: relative;
   display: flex;
@@ -26,6 +34,7 @@ nav h1 {
   text-align: center;
 }
 nav i {
+  cursor: pointer;
   position: absolute;
   top: 18px;
   left: 10px;
@@ -71,12 +80,19 @@ main section {
   margin: 0 auto;
   width: 90%;
   /* TEST ANIMATION */
+  /* .list-plate {
+       -ms-flex-item-align: end;
+       align-self: flex-end;
+       opacity: 1;
+       overflow: hidden;
+     }*/
 }
 main section hr {
   width: 10px;
   color: #99E2D0;
 }
 main section .list-plate { /* ARTICLE */
+  height: 120px;
   padding-left: 10px;
   background-color: white;
   border-radius: 15px;
@@ -84,59 +100,110 @@ main section .list-plate { /* ARTICLE */
   flex-flow: row wrap;
   justify-content: space-between;
   margin-bottom: 15px;
-  animation: slide-in-bottom 3s ease-in-out;
+  overflow: hidden;
+  box-sizing: border-box;
+  /*-webkit-animation: slide-in-bottom 1s ease-in-out ;
+  animation: slide-in-bottom 1s ease-in-out ;*/
   /* ----------------------------------------------
   /**
   * ----------------------------------------
   * animation slide-in-bottom
   * ----------------------------------------
   */
+  /* @-webkit-keyframes slide-in-bottom {
+       0% {
+       -webkit-transform: translateY(20px);
+               transform: translateY(20px);
+       opacity: 0;
+       }
+       100% {
+       -webkit-transform: translateY(0);
+               transform: translateY(0);
+       opacity: 1;
+       }
+   }
+   @keyframes slide-in-bottom {
+       0% {
+       -webkit-transform: translateY(20px);
+               transform: translateY(20px);
+       opacity: 0;
+       }
+       100% {
+       -webkit-transform: translateY(0);
+               transform: translateY(0);
+       opacity: 1;
+       }
+   }*/
+  /* PRIX + BOUTON ADD CART */
 }
-@keyframes slide-in-bottom {
-  0% {
-    transform: translateY(200px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+main section .list-plate .list-plate-desc {
+  width: 60%;
+}
+main section .list-plate .list-plate-desc p {
+  white-space: nowrap;
+}
+main section .list-plate .list-plate-info {
+  display: flex;
+  flex-flow: row;
+  width: 30%;
+  justify-content: center;
+  align-items: flex-end;
+}
+main section .list-plate .list-plate-info .price {
+  margin-right: 140px;
 }
 main section .list-plate .titre-plat {
   color: black;
   font-size: 1.1em;
   font-weight: 600;
 }
-main section .list-plate .price {
-  width: 10%;
-}
 main section .list-plate .add-cart {
-  position: relative;
-  display: none;
   border-radius: 0 10px 10px 0;
-  width: 10%;
   background-color: #99E2D0;
+  width: 50%;
+  height: 100%;
+  margin-right: -190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 main section .list-plate .add-cart i {
-  position: absolute;
-  top: 30%;
-  left: 30%;
   color: #99E2D0;
   background-color: white;
   border: 1px solid #99E2D0;
   border-radius: 50%;
-  font-size: 35px;
+  font-size: 30px;
 }
-main section .list-plate:hover .add-cart {
-  display: block;
+main section .list-plate:hover {
+  display: flex;
+  flex-flow: row;
 }
 main section .list-plate:hover .price {
-  margin-right: 15px;
+  width: 50%;
+  margin-right: 0;
 }
-main section .list-plate {
-  align-self: flex-end;
-  opacity: 1;
+main section .list-plate:hover .list-plate-desc {
+  /* A DECLENCHER QUAND LE BOUTON VERT ARRIVE SINON LAISSER AVEC LE NOWWRAP DE BASE */
+}
+main section .list-plate:hover .list-plate-desc p {
   overflow: hidden;
+  text-overflow: ellipsis;
+}
+main section .list-plate:hover .add-cart {
+  margin: 0;
+}
+main .menu-commander {
+  box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  padding: 11px 22px;
+  background-image: linear-gradient(-15deg, #9356DC 35%, #FF79DA);
+  color: white;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 footer {
@@ -164,9 +231,63 @@ footer ul {
   .en-tete-image figure img {
     height: 300px;
   }
+  main section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+  main section .list-plate {
+    width: 30%;
+  }
+  main section h3 {
+    width: 100%;
+  }
+  main section .menu-restaurant-box {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+  }
+  main section .titre {
+    width: 100%;
+  }
 }
 @media (min-width: 1024px) {
   .en-tete-image figure img {
     height: 400px;
+  }
+  main section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+    /* AJOUTER AU PANIER SUR PC */
+  }
+  main section .list-plate {
+    height: 95px;
+    width: 30%;
+  }
+  main section .list-plate .list-plate-info .price {
+    margin-right: 50px;
+  }
+  main section .list-plate:hover .price {
+    margin-right: 0px;
+    text-align: center;
+  }
+  main section .list-plate:hover .add-cart {
+    margin: 0;
+  }
+  main section h3 {
+    width: 100%;
+  }
+  main section .menu-restaurant-box {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+  }
+  main section .titre {
+    width: 100%;
   }
 }/*# sourceMappingURL=menu.css.map */

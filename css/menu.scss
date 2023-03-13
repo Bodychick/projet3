@@ -22,6 +22,10 @@ $boxshadow:5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
     display: flex;
     flex-flow: row wrap;
  }
+ @mixin flexbox-row-no-wrap(){
+    display: flex;
+    flex-flow: row;
+ }
  @mixin flexbox-column(){
     display: flex;
     flex-flow: column wrap;
@@ -35,6 +39,9 @@ $boxshadow:5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
 }
 body {
     color:rgb(37, 37, 37);
+    font-family: $second_font;
+    width: 100%;
+    margin: 0 auto;
 }
 h1,h2 {
     font-family: $main_font;
@@ -43,6 +50,10 @@ h1,h2 {
 h1{
     padding: 10px 0;
     margin: 0 auto;
+}
+h3 {
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 nav {
@@ -53,6 +64,7 @@ nav {
         text-align: center;
     }
     i{
+        cursor: pointer;
         position:absolute;
         top: 18px;
         left: 10px;
@@ -99,24 +111,27 @@ main {
             color: $third_color;
         }     
         .list-plate{ /* ARTICLE */
+            height: 120px;
             padding-left: 10px;
             background-color: white;
             border-radius: 15px;
             @include flexbox-row();
             justify-content: space-between;
             margin-bottom: 15px;
-            -webkit-animation: slide-in-bottom 3s ease-in-out ;
-            animation: slide-in-bottom 3s ease-in-out ;
+            overflow: hidden;
+            box-sizing: border-box;
+            /*-webkit-animation: slide-in-bottom 1s ease-in-out ;
+            animation: slide-in-bottom 1s ease-in-out ;*/
             /* ----------------------------------------------
             /**
             * ----------------------------------------
             * animation slide-in-bottom
             * ----------------------------------------
             */
-            @-webkit-keyframes slide-in-bottom {
+           /* @-webkit-keyframes slide-in-bottom {
                 0% {
-                -webkit-transform: translateY(50px);
-                        transform: translateY(50px);
+                -webkit-transform: translateY(20px);
+                        transform: translateY(20px);
                 opacity: 0;
                 }
                 100% {
@@ -127,8 +142,8 @@ main {
             }
             @keyframes slide-in-bottom {
                 0% {
-                -webkit-transform: translateY(200px);
-                        transform: translateY(200px);
+                -webkit-transform: translateY(20px);
+                        transform: translateY(20px);
                 opacity: 0;
                 }
                 100% {
@@ -136,55 +151,92 @@ main {
                         transform: translateY(0);
                 opacity: 1;
                 }
+            }*/
+            .list-plate-desc{
+                width: 60%;      
+                p{
+                    white-space: nowrap;
+                }  
             }
-  
+
+
+            /* PRIX + BOUTON ADD CART */
+            .list-plate-info {
+                @include flexbox-row-no-wrap();
+                width: 30%;
+                justify-content: center;
+                align-items: flex-end;
+                .price {
+                    margin-right: 140px;
+                }
+            }
             
             .titre-plat{
                 color: black;
                 font-size: 1.10em;
                 font-weight: 600;
             }
-            .price {
-                width:10%
-            }
             .add-cart{
-                position: relative;
-                display: none;
                 border-radius: 0 10px 10px 0;
-                width: 10%;
                 background-color: $third_color;
+                width: 50%;
+                height: 100%;
+                margin-right: -190px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 i{
-                    position:absolute;
-                    top: 30%;
-                    left: 30%;
                     color:$third_color;
                     background-color: white;
                     border: 1px solid $third_color;
                     border-radius: 50%;
-                    font-size: 35px;
+                    font-size: 30px;
                 }
             }
         }
 
         .list-plate:hover {
-            .add-cart{
-                display: block;
-            }
+            @include flexbox-row-no-wrap();
             .price{
-                margin-right: 15px;
+                width: 50%;
+                margin-right: 0;
+            }
+            .list-plate-desc{  
+                /* A DECLENCHER QUAND LE BOUTON VERT ARRIVE SINON LAISSER AVEC LE NOWWRAP DE BASE */     
+                p {
+                    overflow: hidden;
+                    
+                    text-overflow: ellipsis ;
+                }
+            }
+            .add-cart{
+                margin: 0;
             }
         }
 
         /* TEST ANIMATION */ 
-        .list-plate {
+       /* .list-plate {
             -ms-flex-item-align: end;
             align-self: flex-end;
             opacity: 1;
             overflow: hidden;
-          }
+          }*/
              
     }
-    
+
+    .menu-commander {
+            @include box-shadow2();
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+            padding: 11px 22px;
+            background-image: linear-gradient(-15deg, $primary_color 35%, $second_color);
+            color:white;   
+            border-radius: 30px;
+            border: none; 
+            cursor: pointer;
+            text-decoration: none;
+    }
 }
 
 footer {
@@ -214,6 +266,26 @@ footer {
         height: 300px;
     }
 
+    main section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        column-gap: 30px;
+        .list-plate{
+            width: 30%;
+        }
+        h3 {
+            width:100%;
+        }
+        .menu-restaurant-box{
+            margin-top: 50px;
+            width: 100%;
+            text-align: center;
+        }
+        .titre {
+            width:100%;
+        }
+    }
 }
 
 @media (min-width: 1024px) {
@@ -221,5 +293,41 @@ footer {
         height: 400px;
     }
 
+    main section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        column-gap: 30px;
+        .list-plate{
+            height: 95px;
+            width: 30%;
+            .list-plate-info .price {
+                margin-right: 50px;
+            }
+        }
+        /* AJOUTER AU PANIER SUR PC */
+        .list-plate:hover {
+            .price{
+                margin-right: 0px;
+                text-align: center;
+            }
+            .add-cart{
+                margin: 0;
+            }
+        }
+
+        h3 {
+            width:100%;
+        }
+        .menu-restaurant-box{
+            margin-top: 50px;
+            width: 100%;
+            text-align: center;
+        }
+        .titre {
+            width:100%;
+        }
+        
+    }
 }
 
