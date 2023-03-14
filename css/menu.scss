@@ -55,6 +55,10 @@ h3 {
     text-transform: uppercase;
     font-weight: 400;
 }
+.underline::first-letter{
+    text-decoration: solid;
+    text-decoration-color: $third_color;
+}
 
 nav {
     position: relative;
@@ -70,6 +74,7 @@ nav {
         left: 10px;
     }
 }
+
 .en-tete-image{
     position: relative;
     width: 100%;
@@ -96,22 +101,42 @@ main {
         @include flexbox-row();
         justify-content: space-between;
         align-items: center;
+        p{
+            position:relative;
+            width: 20px;
+        }
+        /*On leur définit un espace allouée et une position absolute pour qu'il soit superposé*/
+        .remplir, .remplir-hover {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+        /*COEUR CREUX*/
         .remplir {
             animation:normal 10s ease;
         }
         .remplir:hover {
-            color: #9356DC;
+            display: none;
+            opacity: 0;
         }
+        /*COEUR REMPLI*/
+        .remplir-hover{
+            color:$primary_color;
+            opacity: 0;
+        }
+        .remplir-hover:hover{
+            opacity: 1;
+        }
+        
     }
     section {
         margin: 0 auto;
-        width: 90%;
-        hr{
-            width:10px;
-            color: $third_color;
-        }     
+        width: 90%;   
         .list-plate{ /* ARTICLE */
-            height: 120px;
+            cursor: pointer;
+            height: 95px;
             padding-left: 10px;
             background-color: white;
             border-radius: 15px;
@@ -179,7 +204,7 @@ main {
             .add-cart{
                 border-radius: 0 10px 10px 0;
                 background-color: $third_color;
-                width: 50%;
+                width: 60%;
                 height: 100%;
                 margin-right: -190px;
                 display: flex;
@@ -222,6 +247,10 @@ main {
             overflow: hidden;
           }*/
              
+    }
+    .menu-restaurant-box{
+        display: flex;
+        justify-content: center;
     }
 
     .menu-commander {
@@ -289,6 +318,9 @@ footer {
 }
 
 @media (min-width: 1024px) {
+    body {
+        max-width: 1400px;
+    }
     .en-tete-image figure img {
         height: 400px;
     }
@@ -299,10 +331,9 @@ footer {
         justify-content: center;
         column-gap: 30px;
         .list-plate{
-            height: 95px;
             width: 30%;
             .list-plate-info .price {
-                margin-right: 50px;
+                margin-right: 65px;
             }
         }
         /* AJOUTER AU PANIER SUR PC */

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -22,6 +23,12 @@ h1 {
 h3 {
   text-transform: uppercase;
   font-weight: 400;
+}
+
+.underline::first-letter {
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  text-decoration-color: #99E2D0;
 }
 
 nav {
@@ -69,12 +76,34 @@ main .titre {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  /*On leur définit un espace allouée et une position absolute pour qu'il soit superposé*/
+  /*COEUR CREUX*/
+  /*COEUR REMPLI*/
+}
+main .titre p {
+  position: relative;
+  width: 20px;
+}
+main .titre .remplir, main .titre .remplir-hover {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
 }
 main .titre .remplir {
   animation: normal 10s ease;
 }
 main .titre .remplir:hover {
+  display: none;
+  opacity: 0;
+}
+main .titre .remplir-hover {
   color: #9356DC;
+  opacity: 0;
+}
+main .titre .remplir-hover:hover {
+  opacity: 1;
 }
 main section {
   margin: 0 auto;
@@ -87,12 +116,9 @@ main section {
        overflow: hidden;
      }*/
 }
-main section hr {
-  width: 10px;
-  color: #99E2D0;
-}
 main section .list-plate { /* ARTICLE */
-  height: 120px;
+  cursor: pointer;
+  height: 95px;
   padding-left: 10px;
   background-color: white;
   border-radius: 15px;
@@ -160,7 +186,7 @@ main section .list-plate .titre-plat {
 main section .list-plate .add-cart {
   border-radius: 0 10px 10px 0;
   background-color: #99E2D0;
-  width: 50%;
+  width: 60%;
   height: 100%;
   margin-right: -190px;
   display: flex;
@@ -191,6 +217,10 @@ main section .list-plate:hover .list-plate-desc p {
 }
 main section .list-plate:hover .add-cart {
   margin: 0;
+}
+main .menu-restaurant-box {
+  display: flex;
+  justify-content: center;
 }
 main .menu-commander {
   box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
@@ -254,6 +284,9 @@ footer ul {
   }
 }
 @media (min-width: 1024px) {
+  body {
+    max-width: 1400px;
+  }
   .en-tete-image figure img {
     height: 400px;
   }
@@ -266,11 +299,10 @@ footer ul {
     /* AJOUTER AU PANIER SUR PC */
   }
   main section .list-plate {
-    height: 95px;
     width: 30%;
   }
   main section .list-plate .list-plate-info .price {
-    margin-right: 50px;
+    margin-right: 65px;
   }
   main section .list-plate:hover .price {
     margin-right: 0px;
