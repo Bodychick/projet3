@@ -8,6 +8,7 @@ body {
   font-family: "Roboto", sans-serif;
   width: 100%;
   margin: 0 auto;
+  min-width: 320px;
 }
 
 h1, h2 {
@@ -92,15 +93,16 @@ main .titre .remplir, main .titre .remplir-hover {
   cursor: pointer;
 }
 main .titre .remplir {
-  animation: normal 10s ease;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
 }
 main .titre .remplir:hover {
-  display: none;
   opacity: 0;
 }
 main .titre .remplir-hover {
   color: #9356DC;
   opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 main .titre .remplir-hover:hover {
   opacity: 1;
@@ -192,8 +194,10 @@ main section .list-plate .add-cart {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: margin 0.4s ease-in;
 }
 main section .list-plate .add-cart i {
+  transition: transform 0.6s ease-in;
   color: #99E2D0;
   background-color: white;
   border: 1px solid #99E2D0;
@@ -217,6 +221,9 @@ main section .list-plate:hover .list-plate-desc p {
 }
 main section .list-plate:hover .add-cart {
   margin: 0;
+}
+main section .list-plate:hover .add-cart i {
+  transform: rotate(360deg) scale(1.2);
 }
 main .menu-restaurant-box {
   display: flex;
@@ -265,11 +272,20 @@ footer ul {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    -moz-column-gap: 30px;
-         column-gap: 30px;
+    gap: 3vw;
   }
   main section .list-plate {
-    width: 30%;
+    width: 47%;
+  }
+  main section .list-plate .list-plate-info .price {
+    margin-right: 100px;
+  }
+  main section .list-plate:hover .price {
+    margin-right: 0px;
+    text-align: center;
+  }
+  main section .list-plate:hover .add-cart {
+    margin: 0;
   }
   main section h3 {
     width: 100%;
@@ -302,7 +318,7 @@ footer ul {
     width: 30%;
   }
   main section .list-plate .list-plate-info .price {
-    margin-right: 65px;
+    margin-right: 110px;
   }
   main section .list-plate:hover .price {
     margin-right: 0px;
