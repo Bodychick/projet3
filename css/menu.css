@@ -130,39 +130,24 @@ main section .list-plate { /* ARTICLE */
   margin-bottom: 15px;
   overflow: hidden;
   box-sizing: border-box;
-  /*-webkit-animation: slide-in-bottom 1s ease-in-out ;
-  animation: slide-in-bottom 1s ease-in-out ;*/
+  animation: slide-in-bottom 1s ease-in-out;
   /* ----------------------------------------------
   /**
   * ----------------------------------------
   * animation slide-in-bottom
   * ----------------------------------------
   */
-  /* @-webkit-keyframes slide-in-bottom {
-       0% {
-       -webkit-transform: translateY(20px);
-               transform: translateY(20px);
-       opacity: 0;
-       }
-       100% {
-       -webkit-transform: translateY(0);
-               transform: translateY(0);
-       opacity: 1;
-       }
-   }
-   @keyframes slide-in-bottom {
-       0% {
-       -webkit-transform: translateY(20px);
-               transform: translateY(20px);
-       opacity: 0;
-       }
-       100% {
-       -webkit-transform: translateY(0);
-               transform: translateY(0);
-       opacity: 1;
-       }
-   }*/
   /* PRIX + BOUTON ADD CART */
+}
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 main section .list-plate .list-plate-desc {
   width: 60%;
@@ -242,6 +227,10 @@ main .menu-commander {
   cursor: pointer;
   text-decoration: none;
 }
+main .menu-commander:hover {
+  opacity: 0.9;
+  box-shadow: 5px 5px 5px #b4b3b3, -5px 5px 5px #b4b3b3;
+}
 
 footer {
   background-color: rgb(39, 32, 32);
@@ -272,7 +261,7 @@ footer ul {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    gap: 3vw;
+    gap: 20px;
   }
   main section .list-plate {
     width: 47%;

@@ -17,6 +17,9 @@ $boxshadow:5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
  @mixin box-shadow2(){
     box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
  }
+ @mixin box-shadow-noir(){
+    box-shadow: 5px 5px 5px #b4b3b3, -5px 5px 5px #b4b3b3;
+ }
 
  @mixin flexbox-row(){
     display: flex;
@@ -92,7 +95,7 @@ nav{
     margin-top: 0px;
     background-color:$back-grey2;
     padding: 30px;
-    a {
+    .explorer-restaurant {
         @include box-shadow2();
         -webkit-appearance: button;
         -moz-appearance: button;
@@ -104,6 +107,10 @@ nav{
         border: none; 
         cursor: pointer;
         text-decoration: none;
+    }
+    .explorer-restaurant:hover {
+        opacity: 0.9;
+        @include box-shadow-noir();
     }
 }
 
@@ -220,17 +227,29 @@ ol {
             top:50%;
             bottom:50%;
         }
-        .pos1{
-            z-index: 2;
-            color: #9356DC;
+        .pos1, .pos2 {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+        /*COEUR CREUX*/
+        .pos2 {
+            transition:opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+        .pos2:hover {
             opacity: 0;
         }
-        .pos2{
-            z-index: 1;
+        /*COEUR REMPLI*/
+        .pos1{
+            color:$primary_color;
+            opacity: 0;
+            transition:opacity 0.5s ease-in-out;          
         }
         .pos1:hover{
             opacity: 1;
-            animation-duration: 1500ms;
         }
     }  
 }
@@ -266,8 +285,13 @@ footer {
             column-gap: 4%;
             flex-direction: row;
             justify-content: center;
+            align-items: center;
             li {
                 width:25%;
+                box-sizing: border-box;
+            }
+            li::before {
+                top:30%;
             }
         }
         .restaurant{

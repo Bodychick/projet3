@@ -17,6 +17,9 @@ $boxshadow:5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
  @mixin box-shadow2(){
     box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
  }
+ @mixin box-shadow-noir(){
+    box-shadow: 5px 5px 5px #b4b3b3, -5px 5px 5px #b4b3b3;
+ }
 
  @mixin flexbox-row(){
     display: flex;
@@ -147,15 +150,15 @@ main {
             margin-bottom: 15px;
             overflow: hidden;
             box-sizing: border-box;
-            /*-webkit-animation: slide-in-bottom 1s ease-in-out ;
-            animation: slide-in-bottom 1s ease-in-out ;*/
+            -webkit-animation: slide-in-bottom 1s ease-in-out ;
+            animation: slide-in-bottom 1s ease-in-out ;
             /* ----------------------------------------------
             /**
             * ----------------------------------------
             * animation slide-in-bottom
             * ----------------------------------------
             */
-           /* @-webkit-keyframes slide-in-bottom {
+            @-webkit-keyframes slide-in-bottom {
                 0% {
                 -webkit-transform: translateY(20px);
                         transform: translateY(20px);
@@ -178,7 +181,7 @@ main {
                         transform: translateY(0);
                 opacity: 1;
                 }
-            }*/
+            }
             .list-plate-desc{
                 width: 60%;      
                 p{
@@ -273,6 +276,10 @@ main {
             cursor: pointer;
             text-decoration: none;
     }
+    .menu-commander:hover {
+        opacity: 0.9;
+        @include box-shadow-noir();
+    }
 }
 
 footer {
@@ -303,10 +310,9 @@ footer {
     }
 
     main section {
-        display: flex;
-        flex-flow: row wrap;
+        @include flexbox-row();
         justify-content: flex-start;
-        gap: 3vw;
+        gap: 20px;
         .list-plate{
             width: 47%;
             .list-plate-info .price {

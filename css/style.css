@@ -70,7 +70,7 @@ nav {
   background-color: rgba(245, 245, 245, 0.7411764706);
   padding: 30px;
 }
-.presentation a {
+.presentation .explorer-restaurant {
   box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
   -webkit-appearance: button;
   -moz-appearance: button;
@@ -82,6 +82,10 @@ nav {
   border: none;
   cursor: pointer;
   text-decoration: none;
+}
+.presentation .explorer-restaurant:hover {
+  opacity: 0.9;
+  box-shadow: 5px 5px 5px #b4b3b3, -5px 5px 5px #b4b3b3;
 }
 
 .fonctionnement {
@@ -183,6 +187,8 @@ ol i {
   padding: 0px 10px;
   justify-content: space-between;
   align-items: center;
+  /*COEUR CREUX*/
+  /*COEUR REMPLI*/
 }
 .restaurant figcaption .heart-class {
   position: relative;
@@ -198,17 +204,27 @@ ol i {
   top: 50%;
   bottom: 50%;
 }
-.restaurant figcaption .pos1 {
-  z-index: 2;
-  color: #9356DC;
-  opacity: 0;
+.restaurant figcaption .pos1, .restaurant figcaption .pos2 {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
 }
 .restaurant figcaption .pos2 {
-  z-index: 1;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+.restaurant figcaption .pos2:hover {
+  opacity: 0;
+}
+.restaurant figcaption .pos1 {
+  color: #9356DC;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 .restaurant figcaption .pos1:hover {
   opacity: 1;
-  animation-duration: 1500ms;
 }
 
 footer {
@@ -242,9 +258,14 @@ footer ul li {
          column-gap: 4%;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
   }
   .fonctionnement ol li {
     width: 25%;
+    box-sizing: border-box;
+  }
+  .fonctionnement ol li::before {
+    top: 30%;
   }
   .restaurant {
     display: flex;
