@@ -144,7 +144,11 @@ main {
     }
     section {
         margin: 0 auto;
-        width: 90%;   
+        width: 90%;  
+        .soulign{
+            border-bottom: 3px solid $third_color;
+            padding-bottom: 4px;
+        } 
         .list-plate{ /* ARTICLE */
             cursor: pointer;
             height: 95px;

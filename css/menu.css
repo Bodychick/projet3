@@ -115,6 +115,10 @@ main section {
   margin: 0 auto;
   width: 90%;
 }
+main section .soulign {
+  border-bottom: 3px solid #99E2D0;
+  padding-bottom: 4px;
+}
 main section .list-plate { /* ARTICLE */
   cursor: pointer;
   height: 95px;
