@@ -127,7 +127,13 @@ main {
         }
         /*COEUR REMPLI*/
         .remplir-hover{
-            color:$primary_color;
+            background: -moz-linear-gradient(-15deg, $primary_color 25%, $second_color );
+            background: -webkit-linear-gradient(-15deg, $primary_color 25%, $second_color );
+            background: linear-gradient(-15deg, $primary_color 25%, $second_color );
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             opacity: 0;
             transition:opacity 0.5s ease-in-out;          
         }
@@ -186,6 +192,7 @@ main {
                 width: 60%;      
                 p{
                     white-space: nowrap;
+                    text-overflow: ellipsis ;
                 }  
             }
 
@@ -236,9 +243,7 @@ main {
             .list-plate-desc{  
                 /* A DECLENCHER QUAND LE BOUTON VERT ARRIVE SINON LAISSER AVEC LE NOWWRAP DE BASE */     
                 p {
-                    overflow: hidden;
-                    
-                    text-overflow: ellipsis ;
+                    overflow: hidden;    
                 }
             }
             .add-cart{
@@ -247,16 +252,7 @@ main {
                     transform: rotate(360deg) scale(1.2);
                 }
             }
-        }
-
-        /* TEST ANIMATION */ 
-       /* .list-plate {
-            -ms-flex-item-align: end;
-            align-self: flex-end;
-            opacity: 1;
-            overflow: hidden;
-          }*/
-             
+        }             
     }
     .menu-restaurant-box{
         display: flex;
@@ -294,13 +290,14 @@ footer {
     p {
         font-family: $main_font;
         padding-top: 15px;        
-        line-height: 1.15em;
     }
 
     ul {
         list-style: none;
         margin-inline-start: 0;
+        line-height: 1.5em;
     }
+
 }
 
 

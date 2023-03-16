@@ -30,9 +30,43 @@ $boxshadow:5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
     flex-flow: column wrap;
  }
 
-*{
-    box-sizing: border-box;
-}
+/* CSS pour le spinner */
+// .loader {
+//      z-index: 999;
+//      $animation-duration:2s;
+//      position: fixed;
+//      display: grid;
+//      inset: 0;
+//      height: 100vh;
+//      place-items: center;
+//      background-color: white;
+//      opacity: 0.9;
+//      animation: disappear 1s forwards;
+//      &::after {
+//          content: "";
+//          width: 500px;
+//          height: 200px;
+//          border: 16px solid $primary_color; /* couleur de fond */
+//          border-top: 16px solid $second_color;
+//          border-bottom: 16px solid $third_color; /* couleur de la partie visible */
+//          border-radius: 50%;
+//          width: 120px;
+//          height: 120px;
+//          animation: spin $animation-duration infinite linear;
+//      }
+//    }
+  
+//    @keyframes spin {
+//      0% { 
+//          transform: rotate(0deg);
+//       }
+//      100% { 
+//         display: none;
+//          transform: rotate(360deg);
+//      }
+    
+// }
+  
 body{
     font-family: $second_font;
     color:rgb(41, 40, 40);
@@ -183,6 +217,7 @@ ol {
         margin: 15px auto auto auto;
     } 
     figure{
+       //cursor: pointer;
        position: relative;
        z-index: 1;
        border: 4px solid white;
@@ -232,7 +267,6 @@ ol {
             position: absolute;
             align-items: center;
             justify-content: flex-end;
-            cursor: pointer;
         }
         /*COEUR CREUX*/
         .pos2 {
@@ -244,7 +278,13 @@ ol {
         }
         /*COEUR REMPLI*/
         .pos1{
-            color:$primary_color;
+            background: -moz-linear-gradient(-15deg, $primary_color 25%, $second_color );
+            background: -webkit-linear-gradient(-15deg, $primary_color 25%, $second_color );
+            background: linear-gradient(-15deg, $primary_color 25%, $second_color );
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             opacity: 0;
             transition:opacity 0.5s ease-in-out;          
         }
@@ -266,15 +306,12 @@ footer {
         p {
             font-family: $main_font;
             padding-top: 15px;        
-            line-height: 1.15em;
         }
 
         ul {
             list-style: none;
             margin-inline-start: 0;
-            li {
-                line-height: 1.5em;
-            }
+            line-height: 1.5em;
         }
     }
 

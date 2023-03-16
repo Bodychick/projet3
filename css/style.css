@@ -1,7 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
+/* CSS pour le spinner */
 body {
   font-family: "Roboto", sans-serif;
   color: rgb(41, 40, 40);
@@ -209,7 +206,6 @@ ol i {
   position: absolute;
   align-items: center;
   justify-content: flex-end;
-  cursor: pointer;
 }
 .restaurant figcaption .pos2 {
   transition: opacity 0.5s ease-in-out;
@@ -219,7 +215,11 @@ ol i {
   opacity: 0;
 }
 .restaurant figcaption .pos1 {
-  color: #9356DC;
+  background: linear-gradient(-15deg, #9356DC 25%, #FF79DA);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
@@ -240,14 +240,11 @@ footer p, footer ul {
 footer p {
   font-family: "Shrikhand", sans-serif;
   padding-top: 15px;
-  line-height: 1.15em;
 }
 footer ul {
   list-style: none;
   -webkit-margin-start: 0;
           margin-inline-start: 0;
-}
-footer ul li {
   line-height: 1.5em;
 }
 

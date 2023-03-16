@@ -100,7 +100,11 @@ main .titre .remplir:hover {
   opacity: 0;
 }
 main .titre .remplir-hover {
-  color: #9356DC;
+  background: linear-gradient(-15deg, #9356DC 25%, #FF79DA);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
@@ -110,13 +114,6 @@ main .titre .remplir-hover:hover {
 main section {
   margin: 0 auto;
   width: 90%;
-  /* TEST ANIMATION */
-  /* .list-plate {
-       -ms-flex-item-align: end;
-       align-self: flex-end;
-       opacity: 1;
-       overflow: hidden;
-     }*/
 }
 main section .list-plate { /* ARTICLE */
   cursor: pointer;
@@ -154,6 +151,7 @@ main section .list-plate .list-plate-desc {
 }
 main section .list-plate .list-plate-desc p {
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 main section .list-plate .list-plate-info {
   display: flex;
@@ -202,7 +200,6 @@ main section .list-plate:hover .list-plate-desc {
 }
 main section .list-plate:hover .list-plate-desc p {
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 main section .list-plate:hover .add-cart {
   margin: 0;
@@ -245,12 +242,12 @@ footer p, footer ul {
 footer p {
   font-family: "Shrikhand", sans-serif;
   padding-top: 15px;
-  line-height: 1.15em;
 }
 footer ul {
   list-style: none;
   -webkit-margin-start: 0;
           margin-inline-start: 0;
+  line-height: 1.5em;
 }
 
 @media (min-width: 768px) {
