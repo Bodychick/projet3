@@ -253,7 +253,6 @@ ol i {
   -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #9356DC;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
