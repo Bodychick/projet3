@@ -8,7 +8,7 @@
   place-items: center;
   background-color: white;
   opacity: 0.9;
-  animation: disappear 1s forwards;
+  animation: disappear 1.5s forwards;
 }
 .loader::after {
   content: "";
@@ -20,15 +20,26 @@
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  animation: spin 2s infinite linear;
+  animation: spin 1.5s infinite linear;
 }
 
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
   100% {
-    display: none;
     transform: rotate(360deg);
   }
 }

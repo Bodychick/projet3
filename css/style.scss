@@ -33,7 +33,7 @@ $boxshadow:5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
 /* CSS pour le spinner */
  .loader {
       z-index: 2;
-      $animation-duration:2s;
+      $animation-duration:1.5s;
       position: fixed;
       display: grid;
       inset: 0;
@@ -41,7 +41,7 @@ $boxshadow:5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
       place-items: center;
       background-color: white;
       opacity: 0.9;
-      animation: disappear 1s forwards;
+      animation: disappear $animation-duration forwards;
       &::after {
           content: "";
           width: 500px;
@@ -55,17 +55,28 @@ $boxshadow:5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
           animation: spin $animation-duration infinite linear;
       }
     }
+
+    @keyframes disappear {
+        0% { 
+            opacity: 1;
+         }
+         90% {
+            opacity: 0.90;
+         }
+        100% { 
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
   
     @keyframes spin {
       0% { 
           transform: rotate(0deg);
        }
       100% { 
-         display: none;
           transform: rotate(360deg);
       }
-    
- }
+    }
   
 body{
     font-family: $second_font;
