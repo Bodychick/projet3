@@ -68,7 +68,6 @@ main {
 
 header, .presentation {
   justify-content: center;
-  width: 100%;
   text-align: center;
   margin: 0 auto;
 }
@@ -205,6 +204,11 @@ ol i {
   box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
   border-radius: 15px;
   background-color: white;
+  cursor: pointer;
+}
+.restaurant figure a {
+  text-decoration: none;
+  color: rgb(43, 43, 43);
 }
 .restaurant img {
   height: 130px;

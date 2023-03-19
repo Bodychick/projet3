@@ -193,9 +193,10 @@ main {
                 }
             }
             .list-plate-desc{
-                width: 60%;      
+                width: 70%;      
                 p{
                     white-space: nowrap;
+                    overflow: hidden;
                     text-overflow: ellipsis ;
                 }  
             }
@@ -208,7 +209,7 @@ main {
                 justify-content: center;
                 align-items: flex-end;
                 .price {
-                    margin-right: 140px;
+                    margin-right: 100px;
                 }
             }
             
@@ -240,6 +241,12 @@ main {
 
         .list-plate:hover {
             @include flexbox-row-no-wrap();
+            .list-plate-info {
+                width: 30%;
+            }
+            .list-plate-desc{
+                width: 70%;
+            }
             .price{
                 width: 50%;
                 margin-right: 0;
@@ -247,7 +254,8 @@ main {
             .list-plate-desc{  
                 /* A DECLENCHER QUAND LE BOUTON VERT ARRIVE SINON LAISSER AVEC LE NOWWRAP DE BASE */     
                 p {
-                    overflow: hidden;    
+                    overflow: hidden;
+                    text-overflow: ellipsis;    
                 }
             }
             .add-cart{
@@ -355,7 +363,7 @@ footer {
     main section {
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
+        justify-content: flex-start;
         column-gap: 30px;
         .list-plate{
             width: 30%;

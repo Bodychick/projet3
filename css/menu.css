@@ -151,10 +151,11 @@ main section .list-plate { /* ARTICLE */
   }
 }
 main section .list-plate .list-plate-desc {
-  width: 60%;
+  width: 70%;
 }
 main section .list-plate .list-plate-desc p {
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 main section .list-plate .list-plate-info {
@@ -165,7 +166,7 @@ main section .list-plate .list-plate-info {
   align-items: flex-end;
 }
 main section .list-plate .list-plate-info .price {
-  margin-right: 140px;
+  margin-right: 100px;
 }
 main section .list-plate .titre-plat {
   color: black;
@@ -195,6 +196,12 @@ main section .list-plate:hover {
   display: flex;
   flex-flow: row;
 }
+main section .list-plate:hover .list-plate-info {
+  width: 30%;
+}
+main section .list-plate:hover .list-plate-desc {
+  width: 70%;
+}
 main section .list-plate:hover .price {
   width: 50%;
   margin-right: 0;
@@ -204,6 +211,7 @@ main section .list-plate:hover .list-plate-desc {
 }
 main section .list-plate:hover .list-plate-desc p {
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 main section .list-plate:hover .add-cart {
   margin: 0;
@@ -299,7 +307,7 @@ footer ul {
   main section {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-start;
     -moz-column-gap: 30px;
          column-gap: 30px;
     /* AJOUTER AU PANIER SUR PC */

@@ -101,7 +101,6 @@ main{
 
 header, .presentation {
     justify-content: center;
-    width:100%;
     text-align: center;
     margin: 0 auto;
 }
@@ -235,7 +234,11 @@ ol {
        box-shadow: $boxshadow;
        border-radius: 15px;
        background-color: white;
-       
+       cursor: pointer;
+       a{
+        text-decoration: none;
+        color:rgb(43, 43, 43);
+       }
     }
     img {
         height: 130px;
