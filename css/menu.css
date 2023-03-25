@@ -114,116 +114,78 @@ main .titre .remplir-hover:hover {
 main section {
   margin: 0 auto;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 main section .soulign {
   border-bottom: 3px solid #99E2D0;
   padding-bottom: 4px;
 }
-main section .list-plate { /* ARTICLE */
-  cursor: pointer;
-  height: 95px;
+main section .list-plate {
   padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
   background-color: white;
   border-radius: 15px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  margin-bottom: 15px;
   overflow: hidden;
+  height: 70px;
   box-sizing: border-box;
-  animation: slide-in-bottom 1s ease-in-out;
-  /* ----------------------------------------------
-  /**
-  * ----------------------------------------
-  * animation slide-in-bottom
-  * ----------------------------------------
-  */
-  /* PRIX + BOUTON ADD CART */
+  cursor: pointer;
 }
-@keyframes slide-in-bottom {
-  0% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+main section .list-plate .list-plate__desc {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
-main section .list-plate .list-plate-desc {
-  width: 70%;
+main section .list-plate .list-plate__titre {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+  padding: 10px;
 }
-main section .list-plate .list-plate-desc p {
+main section .list-plate .list-plate__titre p {
+  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 0.93rem;
+  font-weight: 300;
+  margin: 0;
 }
-main section .list-plate .list-plate-info {
-  display: flex;
-  flex-flow: row;
-  width: 30%;
-  justify-content: center;
-  align-items: flex-end;
-}
-main section .list-plate .list-plate-info .price {
-  margin-right: 100px;
-}
-main section .list-plate .titre-plat {
-  color: black;
-  font-size: 1.1em;
+main section .list-plate .list-plate__titre .titre-plat {
+  font-size: 1.15em;
   font-weight: 600;
+  margin: 0;
+}
+main section .list-plate .price {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 600;
+  padding-right: 10px;
 }
 main section .list-plate .add-cart {
-  border-radius: 0 10px 10px 0;
-  background-color: #99E2D0;
-  width: 60%;
+  width: 30%;
+  overflow: hidden;
   height: 100%;
-  margin-right: -190px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: margin 0.4s ease-in;
+  background-color: #99e2d0;
+  opacity: 1;
+  transition: all 800ms ease-in;
 }
 main section .list-plate .add-cart i {
-  transition: transform 0.6s ease-in;
-  color: #99E2D0;
-  background-color: white;
-  border: 1px solid #99E2D0;
-  border-radius: 50%;
-  font-size: 30px;
+  color: white;
+  font-size: 1.5rem;
 }
-main section .list-plate:hover {
-  display: flex;
-  flex-flow: row;
-}
-main section .list-plate:hover .list-plate-info {
-  width: 30%;
-}
-main section .list-plate:hover .list-plate-desc {
-  width: 70%;
-}
-main section .list-plate:hover .price {
-  width: 50%;
-  margin-right: 0;
-}
-main section .list-plate:hover .list-plate-desc {
-  /* A DECLENCHER QUAND LE BOUTON VERT ARRIVE SINON LAISSER AVEC LE NOWWRAP DE BASE */
-}
-main section .list-plate:hover .list-plate-desc p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-main section .list-plate:hover .add-cart {
-  margin: 0;
-}
-main section .list-plate:hover .add-cart i {
-  transform: rotate(360deg) scale(1.2);
-}
-main .menu-restaurant-box {
+main section .menu-restaurant-box {
   display: flex;
   justify-content: center;
 }
-main .menu-commander {
+main section .menu-commander {
   box-shadow: 5px 5px 5px #e8e8e8, -5px 5px 5px #e8e8e8;
   -webkit-appearance: button;
   -moz-appearance: button;
@@ -236,7 +198,7 @@ main .menu-commander {
   cursor: pointer;
   text-decoration: none;
 }
-main .menu-commander:hover {
+main section .menu-commander:hover {
   opacity: 0.9;
   box-shadow: 5px 5px 5px #b4b3b3, -5px 5px 5px #b4b3b3;
 }
@@ -269,21 +231,11 @@ footer ul {
   main section {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 20px;
   }
   main section .list-plate {
-    width: 47%;
-  }
-  main section .list-plate .list-plate-info .price {
-    margin-right: 100px;
-  }
-  main section .list-plate:hover .price {
-    margin-right: 0px;
-    text-align: center;
-  }
-  main section .list-plate:hover .add-cart {
-    margin: 0;
+    width: 40%;
   }
   main section h3 {
     width: 100%;
@@ -310,20 +262,9 @@ footer ul {
     justify-content: flex-start;
     -moz-column-gap: 30px;
          column-gap: 30px;
-    /* AJOUTER AU PANIER SUR PC */
   }
   main section .list-plate {
     width: 30%;
-  }
-  main section .list-plate .list-plate-info .price {
-    margin-right: 110px;
-  }
-  main section .list-plate:hover .price {
-    margin-right: 0px;
-    text-align: center;
-  }
-  main section .list-plate:hover .add-cart {
-    margin: 0;
   }
   main section h3 {
     width: 100%;

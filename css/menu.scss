@@ -144,128 +144,85 @@ main {
     }
     section {
         margin: 0 auto;
-        width: 90%;  
+        width: 90%; 
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px; 
         .soulign{
             border-bottom: 3px solid $third_color;
             padding-bottom: 4px;
         } 
-        .list-plate{ /* ARTICLE */
-            cursor: pointer;
-            height: 95px;
+
+        // Carte restaurant 
+        .list-plate{
             padding-left: 10px;
+            display: flex;
+            justify-content: space-between;
             background-color: white;
             border-radius: 15px;
-            @include flexbox-row();
-            justify-content: space-between;
-            margin-bottom: 15px;
             overflow: hidden;
+            height: 70px;
             box-sizing: border-box;
-            -webkit-animation: slide-in-bottom 1s ease-in-out ;
-            animation: slide-in-bottom 1s ease-in-out ;
-            /* ----------------------------------------------
-            /**
-            * ----------------------------------------
-            * animation slide-in-bottom
-            * ----------------------------------------
-            */
-            @-webkit-keyframes slide-in-bottom {
-                0% {
-                -webkit-transform: translateY(20px);
-                        transform: translateY(20px);
-                opacity: 0;
-                }
-                100% {
-                -webkit-transform: translateY(0);
-                        transform: translateY(0);
-                opacity: 1;
-                }
+            cursor: pointer;
+            .list-plate__desc{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
             }
-            @keyframes slide-in-bottom {
-                0% {
-                -webkit-transform: translateY(20px);
-                        transform: translateY(20px);
-                opacity: 0;
-                }
-                100% {
-                -webkit-transform: translateY(0);
-                        transform: translateY(0);
-                opacity: 1;
-                }
-            }
-            .list-plate-desc{
-                width: 70%;      
-                p{
+            .list-plate__titre{
+                white-space: nowrap;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                overflow: hidden;
+                padding: 10px;
+                p {
+                    max-width: 100%;
                     white-space: nowrap;
                     overflow: hidden;
-                    text-overflow: ellipsis ;
-                }  
-            }
-
-
-            /* PRIX + BOUTON ADD CART */
-            .list-plate-info {
-                @include flexbox-row-no-wrap();
-                width: 30%;
-                justify-content: center;
-                align-items: flex-end;
-                .price {
-                    margin-right: 100px;
+                    text-overflow: ellipsis;
+                    font-size: 0.93rem;
+                    font-weight: 300;
+                    margin: 0;
+                }
+                .titre-plat{
+                    font-size: 1.15em;
+                    font-weight: 600;
+                    margin: 0;
                 }
             }
-            
-            .titre-plat{
-                color: black;
-                font-size: 1.10em;
+            .price{
+                display: flex;
+                align-items:flex-end;
                 font-weight: 600;
+                padding-right: 10px;
+                
             }
-            .add-cart{
-                border-radius: 0 10px 10px 0;
-                background-color: $third_color;
-                width: 60%;
+            .add-cart {
+                width: 30%;
+                overflow: hidden;
                 height: 100%;
-                margin-right: -190px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: margin 0.4s ease-in;
+                background-color: #99e2d0;
+                opacity: 1;
+                transition: all 800ms ease-in;
                 i{
-                    transition: transform 0.6s ease-in;
-                    color:$third_color;
-                    background-color: white;
-                    border: 1px solid $third_color;
-                    border-radius: 50%;
-                    font-size: 30px;
+                    color: white;
+                    font-size: 1.5rem;
                 }
             }
         }
 
-        .list-plate:hover {
-            @include flexbox-row-no-wrap();
-            .list-plate-info {
-                width: 30%;
-            }
-            .list-plate-desc{
-                width: 70%;
-            }
-            .price{
-                width: 50%;
-                margin-right: 0;
-            }
-            .list-plate-desc{  
-                /* A DECLENCHER QUAND LE BOUTON VERT ARRIVE SINON LAISSER AVEC LE NOWWRAP DE BASE */     
-                p {
-                    overflow: hidden;
-                    text-overflow: ellipsis;    
-                }
-            }
-            .add-cart{
-                margin: 0;
-                i{
-                    transform: rotate(360deg) scale(1.2);
-                }
-            }
-        }             
-    }
+        .list-plate:hover{
+            
+        }
+
+
+
+
+
     .menu-restaurant-box{
         display: flex;
         justify-content: center;
@@ -287,6 +244,7 @@ main {
     .menu-commander:hover {
         opacity: 0.9;
         @include box-shadow-noir();
+    }
     }
 }
 
@@ -320,23 +278,14 @@ footer {
 
     main section {
         @include flexbox-row();
-        justify-content: flex-start;
+        justify-content: space-between;
         gap: 20px;
+
         .list-plate{
-            width: 47%;
-            .list-plate-info .price {
-                 margin-right: 100px; 
-            }
+            width: 40%;
         }
-        .list-plate:hover {
-            .price{
-                margin-right: 0px;
-                text-align: center;
-            }
-            .add-cart{
-                margin: 0;
-            }
-        }
+        
+        
         h3 {
             width:100%;
         }
@@ -365,21 +314,9 @@ footer {
         flex-flow: row wrap;
         justify-content: flex-start;
         column-gap: 30px;
+      
         .list-plate{
             width: 30%;
-            .list-plate-info .price {
-                margin-right: 110px;
-            }
-        }
-        /* AJOUTER AU PANIER SUR PC */
-        .list-plate:hover {
-            .price{
-                margin-right: 0px;
-                text-align: center;
-            }
-            .add-cart{
-                margin: 0;
-            }
         }
 
         h3 {
